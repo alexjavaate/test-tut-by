@@ -1,2 +1,4 @@
-package driver;public class ScreenshotManager {
+package driver;
+
+public class ScreenshotManager {
 }

@@ -1,2 +1,38 @@
-package tut_by;public class BaseTest {
+package tut_by;
+
+import driver.DriverSingleton;
+import org.testng.Assert;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import service.AfishaMainPageSteps;
+import service.MainPageSteps;
+import service.OnlineCinemaPageStep;
+import util.PropertyReader;
+import java.util.List;
+
+public class BaseTest {
+
+    protected OnlineCinemaPageStep onlineCinemaPageStep = new OnlineCinemaPageStep();
+    private static final String TUT_BY_URL = "tut.by.url";
+
+    @BeforeTest
+    public void setUp() {
+        DriverSingleton.getInstance().getDriver().get(PropertyReader.getProperty(TUT_BY_URL));
+        MainPageSteps mainPageStep = new MainPageSteps();
+        mainPageStep.clickAfishaLink();
+        AfishaMainPageSteps afishaMainPageSteps = new AfishaMainPageSteps();
+        afishaMainPageSteps.clickOnlineCinemaLink();
+    }
+
+    protected void verifyFiltering(List<String> descriptions, String genre) {
+        for (String description : descriptions) {
+            Assert.assertTrue(description.contains(genre));
+        }
+    }
+
+    @AfterTest
+    public void tearDown() {
+        DriverSingleton.getInstance().closeDriver();
+
+    }
 }
