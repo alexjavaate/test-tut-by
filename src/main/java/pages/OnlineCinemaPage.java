@@ -14,13 +14,13 @@ public class OnlineCinemaPage extends BasePage {
 
     private static final String GENRE_ANIMATION_XPATH = "//div[@id='tab-cartoons']//span[text()='%s']";
 
-    @FindBy(xpath = "//div[@id='tab-films']//button[contains(@title, 'Жанры')]")
+    @FindBy(xpath = "//div[@id='tab-films']//select[@data-tags-type='ganries']/following-sibling::div//button")
     private WebElement genreFilmDropDown;
 
-    @FindBy(xpath = "//div[@id='tab-tv-series']//button[contains(@title, 'Жанры')]")
+    @FindBy(xpath = "//div[@id='tab-tv-series']//select[@data-tags-type='ganries']/following-sibling::div//button")
     private WebElement genreSerialDropDown;
 
-    @FindBy(xpath = "//div[@id='tab-cartoons']//button[contains(@title, 'Жанры')]")
+    @FindBy(xpath = "//div[@id='tab-cartoons']//select[@data-tags-type='ganries']/following-sibling::div//button")
     private WebElement genreAnimationDropDown;
 
 

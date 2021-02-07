@@ -5,7 +5,7 @@ import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import service.AfishaMainPageSteps;
-import service.MainPageSteps;
+import service.BaseSteps;
 import service.OnlineCinemaPageStep;
 import util.PropertyReader;
 
@@ -19,7 +19,7 @@ public class BaseTest {
     @BeforeTest
     public void setUp() {
         DriverSingleton.getInstance().getDriver().get(PropertyReader.getProperty(TUT_BY_URL));
-        MainPageSteps mainPageStep = new MainPageSteps();
+        BaseSteps mainPageStep = new BaseSteps();
         mainPageStep.clickAfishaLink();
         AfishaMainPageSteps afishaMainPageSteps = new AfishaMainPageSteps();
         afishaMainPageSteps.clickOnlineCinemaLink();
@@ -34,6 +34,5 @@ public class BaseTest {
     @AfterTest
     public void tearDown() {
         DriverSingleton.getInstance().closeDriver();
-
     }
 }
