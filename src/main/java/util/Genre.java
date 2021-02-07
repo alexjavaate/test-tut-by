@@ -19,8 +19,7 @@ public enum Genre {
         this.genre = genre;
     }
 
-    public String getGenre()
-    {
+    public String getGenre() {
         return genre;
     }
 }

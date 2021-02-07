@@ -4,15 +4,17 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.opera.OperaDriver;
+
 import java.util.concurrent.TimeUnit;
 
 public class DriverSingleton {
 
-    private static DriverSingleton instance;
     private static final ThreadLocal<WebDriver> DRIVER_THREAD_LOCAL = new ThreadLocal<>();
+    private static DriverSingleton instance;
     private WebDriver driver;
 
-    private DriverSingleton() {}
+    private DriverSingleton() {
+    }
 
     public static synchronized DriverSingleton getInstance() {
         if (instance == null) {
@@ -22,7 +24,7 @@ public class DriverSingleton {
     }
 
     public WebDriver getDriver() {
-        if (driver == null){
+        if (driver == null) {
             driver = configureDriver(initDriver());
             DRIVER_THREAD_LOCAL.set(driver);
         }
@@ -37,12 +39,12 @@ public class DriverSingleton {
 
     private WebDriver initDriver() {
         String browserType = System.getProperty("BROWSER_TYPE", "CHROME");
-        switch (browserType){
-            case "CHROME" :
+        switch (browserType) {
+            case "CHROME":
                 return new ChromeDriver();
-            case "FF" :
+            case "FF":
                 return new FirefoxDriver();
-            case "OPERA" :
+            case "OPERA":
                 return new OperaDriver();
             default:
                 throw new RuntimeException("Not supported browser type");

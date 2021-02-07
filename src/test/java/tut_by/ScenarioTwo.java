@@ -1,6 +1,5 @@
 package tut_by;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import util.Genre;
 

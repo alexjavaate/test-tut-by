@@ -10,7 +10,7 @@ public class PropertyReader {
     }
 
     public static String getProperty(String propertyName) {
-            return RESOURCE_BUNDLE.getString(propertyName);
-        }
+        return RESOURCE_BUNDLE.getString(propertyName);
+    }
 
 }

@@ -55,9 +55,9 @@ public class OnlineCinemaPageStep {
     public List<String> getAllDescriptions() {
         logger.info("Get descriptions of all filtered elements");
         OnlineCinemaPage onlineCinemaPage = new OnlineCinemaPage();
-        List<WebElement> filmsList =  onlineCinemaPage.getDescriptions();
+        List<WebElement> filmsList = onlineCinemaPage.getDescriptions();
         List<String> descriptions = new ArrayList<>();
-        for (WebElement film: filmsList) {
+        for (WebElement film : filmsList) {
             descriptions.add(film.getText());
         }
         return descriptions;

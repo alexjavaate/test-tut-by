@@ -8,12 +8,13 @@ import service.AfishaMainPageSteps;
 import service.MainPageSteps;
 import service.OnlineCinemaPageStep;
 import util.PropertyReader;
+
 import java.util.List;
 
 public class BaseTest {
 
-    protected OnlineCinemaPageStep onlineCinemaPageStep = new OnlineCinemaPageStep();
     private static final String TUT_BY_URL = "tut.by.url";
+    protected OnlineCinemaPageStep onlineCinemaPageStep = new OnlineCinemaPageStep();
 
     @BeforeTest
     public void setUp() {

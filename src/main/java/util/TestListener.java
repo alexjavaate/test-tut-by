@@ -16,12 +16,11 @@ import java.io.IOException;
 
 public class TestListener implements ITestListener {
 
-    Logger logger = LogManager.getLogger(TestListener.class);
-
-    private final long time = System.currentTimeMillis();
     private static final String FILE_PATH = ".//test-output/screenshots/screenshot";
     private static final String FILE_VIEW_PATH = "screenshots/screenshot";
     private static final String FILE_EXT = ".png";
+    private final long time = System.currentTimeMillis();
+    Logger logger = LogManager.getLogger(TestListener.class);
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -60,12 +59,12 @@ public class TestListener implements ITestListener {
 
     private String takeScreenshot() {
         WebDriver driver = DriverSingleton.getInstance().getDriver();
-        File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
             FileUtils.copyFile(screenshot, new File(FILE_PATH + time + FILE_EXT));
-        }catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        return FILE_VIEW_PATH+time+FILE_EXT;
+        return FILE_VIEW_PATH + time + FILE_EXT;
     }
 }

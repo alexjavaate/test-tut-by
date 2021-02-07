@@ -5,7 +5,7 @@ import util.Genre;
 
 import java.util.List;
 
-public class ScenarioThree extends BaseTest{
+public class ScenarioThree extends BaseTest {
 
     @Test
     public void testGenresOfAnimation() {
