@@ -1,9 +1,9 @@
 package tut_by;
 
 import driver.DriverSingleton;
-import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.asserts.SoftAssert;
 import service.PosterMainPageSteps;
 import service.BaseSteps;
 import service.OnlineCinemaPageStep;
@@ -26,9 +26,10 @@ public class BaseTest {
     }
 
     protected void verifyFiltering(List<String> descriptions, String genre) {
-        //use softassert & add failure message
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertAll();
         for (String description : descriptions) {
-            Assert.assertTrue(description.contains(genre));
+            softAssert.assertTrue(description.contains(genre),descriptions + " does not contain " + genre);
         }
     }
 
