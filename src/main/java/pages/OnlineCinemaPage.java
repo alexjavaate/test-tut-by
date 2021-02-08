@@ -9,9 +9,7 @@ import java.util.List;
 public class OnlineCinemaPage extends BasePage {
 
     private static final String GENRE_FILM_XPATH = "//div[@id='tab-films']//span[text()='%s']";
-
     private static final String GENRE_SERIAL_XPATH = "//div[@id='tab-tv-series']//span[text()='%s']";
-
     private static final String GENRE_ANIMATION_XPATH = "//div[@id='tab-cartoons']//span[text()='%s']";
 
     @FindBy(xpath = "//div[@id='tab-films']//select[@data-tags-type='ganries']/following-sibling::div//button")
@@ -22,8 +20,7 @@ public class OnlineCinemaPage extends BasePage {
 
     @FindBy(xpath = "//div[@id='tab-cartoons']//select[@data-tags-type='ganries']/following-sibling::div//button")
     private WebElement genreAnimationDropDown;
-
-
+    
     @FindBy(xpath = "//div[@class= 'txt']//p")
     private List<WebElement> descriptions;
 

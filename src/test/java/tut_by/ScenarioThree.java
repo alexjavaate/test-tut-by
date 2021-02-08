@@ -2,7 +2,6 @@ package tut_by;
 
 import org.testng.annotations.Test;
 import util.Genre;
-
 import java.util.List;
 
 public class ScenarioThree extends BaseTest {

@@ -10,7 +10,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -20,7 +19,7 @@ public class TestListener implements ITestListener {
     private static final String FILE_VIEW_PATH = "screenshots/screenshot";
     private static final String FILE_EXT = ".png";
     private final long time = System.currentTimeMillis();
-    Logger logger = LogManager.getLogger(TestListener.class);
+    private final Logger logger = LogManager.getLogger(TestListener.class);
 
     @Override
     public void onTestStart(ITestResult iTestResult) {
@@ -29,7 +28,6 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-
     }
 
     @Override
@@ -39,22 +37,18 @@ public class TestListener implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
     }
 
     @Override
     public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
-
     }
 
     @Override
     public void onStart(ITestContext iTestContext) {
-
     }
 
     @Override
     public void onFinish(ITestContext iTestContext) {
-
     }
 
     private String takeScreenshot() {

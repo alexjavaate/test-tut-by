@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Waiters {
 
-
     private static final int WAIT_TIME = 15;
 
     public static void waitForElementDisplayed(WebElement element) {

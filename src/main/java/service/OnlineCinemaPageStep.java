@@ -8,7 +8,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import pages.OnlineCinemaPage;
 import util.Waiters;
-
 import java.util.ArrayList;
 import java.util.List;
 
