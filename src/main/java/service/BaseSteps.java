@@ -8,9 +8,9 @@ public class BaseSteps {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
-    public void clickPosterLink() {
+    public void clickAfishLink() {
         MainPage mainPage = new MainPage();
-        logger.info("Navigate to Poster page");
+        logger.info("Navigate to Afisha page");
         mainPage.getAfishaLink().click();
     }
 }

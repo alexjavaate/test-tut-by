@@ -2,17 +2,17 @@ package service;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import pages.PosterPage;
+import pages.AfishaPage;
 import util.Waiters;
 
-public class PosterPageSteps {
+public class AfishaPageSteps {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     public void clickOnlineCinemaLink() {
-        PosterPage posterPage = new PosterPage();
+        AfishaPage afishaPage = new AfishaPage();
         logger.info("Navigate to Online cinema page");
-        Waiters.waitForElementDisplayed(posterPage.getOnlineCinemaLink());
-        posterPage.getOnlineCinemaLink().click();
+        Waiters.waitForElementDisplayed(afishaPage.getOnlineCinemaLink());
+        afishaPage.getOnlineCinemaLink().click();
     }
 }
