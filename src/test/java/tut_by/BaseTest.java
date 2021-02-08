@@ -4,7 +4,7 @@ import driver.DriverSingleton;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.asserts.SoftAssert;
-import service.PosterMainPageSteps;
+import service.PosterPageSteps;
 import service.BaseSteps;
 import service.OnlineCinemaPageStep;
 import util.PropertyReader;
@@ -21,8 +21,8 @@ public class BaseTest {
         DriverSingleton.getInstance().getDriver().get(PropertyReader.getProperty(TUT_BY_URL));
         BaseSteps mainPageStep = new BaseSteps();
         mainPageStep.clickPosterLink();
-        PosterMainPageSteps afishaMainPageSteps = new PosterMainPageSteps();
-        afishaMainPageSteps.clickOnlineCinemaLink();
+        PosterPageSteps posterPageSteps = new PosterPageSteps();
+        posterPageSteps.clickOnlineCinemaLink();
     }
 
     protected void verifyFiltering(List<String> descriptions, String genre) {

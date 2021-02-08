@@ -5,14 +5,14 @@ import org.apache.logging.log4j.Logger;
 import pages.PosterPage;
 import util.Waiters;
 
-public class PosterMainPageSteps {
+public class PosterPageSteps {
 
     private final Logger logger = LogManager.getLogger(this.getClass());
 
     public void clickOnlineCinemaLink() {
-        PosterPage posterMainPage = new PosterPage();
+        PosterPage posterPage = new PosterPage();
         logger.info("Navigate to Online cinema page");
-        Waiters.waitForElementDisplayed(posterMainPage.getOnlineCinemaLink());
-        posterMainPage.getOnlineCinemaLink().click();
+        Waiters.waitForElementDisplayed(posterPage.getOnlineCinemaLink());
+        posterPage.getOnlineCinemaLink().click();
     }
 }
